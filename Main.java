@@ -19,14 +19,14 @@ public class Main {
             list.remove(new Dollar(111.22));
             list.remove(2);
             System.out.println("List: ");
-            list.printList();
+            System.out.println(list.printList() + "\n");
             for (int i = 7; i < 11; i++) {
                 list.addCurrency(i % 5, dollarsArr[i]);
             }
             list.remove(list.countCurrency() % 6);
             list.remove(list.countCurrency() / 7);
             System.out.println("List: ");
-            list.printList();
+            System.out.println(list.printList() + "\n");
 
 
             for (int i = 13; i < 20; i++) {
@@ -37,22 +37,23 @@ public class Main {
             stack.pop();
             stack.pop();
             System.out.println("Stack: ");
-            stack.printStack();
+            System.out.println(stack.printStack() + "\n");
             for (int i = 0; i < 5; i++) {
                 stack.push(dollarsArr[i]);
             }
-            stack.printStack();
+            System.out.println("Stack: ");
+            System.out.println(stack.printStack() + "\n");
             stack.pop();
             stack.pop();
             System.out.println("Stack: ");
-            stack.printStack();
+            System.out.println(stack.printStack() + "\n");
 
             for (int i = 0; i < 7; i++) {
                 int idx = 2*i + 5;
                 queue.enqueue(dollarsArr[idx]);
             }
-            queue.peekFront().print();
-            queue.peekRear().print();
+            System.out.println("Front of queue: " + queue.peekFront().print());
+            System.out.println("Back of queue: " + queue.peekRear().print() + "\n");
             queue.dequeue();
             queue.dequeue();
             for (int i = 10; i < 15; i++) {
@@ -62,6 +63,6 @@ public class Main {
                 queue.dequeue();
             }
             System.out.println("Queue: ");
-            queue.printQueue();
+            System.out.println(queue.printQueue() + "\n");
     }
 }

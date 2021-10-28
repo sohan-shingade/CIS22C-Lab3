@@ -85,7 +85,11 @@ public class SinglyLinkedList {
         return remove(idx);
     }
    
-
+    /**
+     * Removes a currency object from the list at index
+     * @param index - index to remove at
+     * @return the removed currency object
+     */
     public Currency remove(int index) {
         
         if (index < 0 || index >= count) {
@@ -98,16 +102,29 @@ public class SinglyLinkedList {
         return removed.getData();
     }
 
-    protected boolean isListEmpty() {
+    /**
+     * checks if list if empty
+     * @return if list is empty
+     */
+    public boolean isListEmpty() {
         return head == null;
     }
-
+    /**
+     * Gets currency object at index
+     * @param index - index to get currency object at
+     * @return currency object at index
+     */
     public Currency getCurrency(int index) {
         if (index < 0 || index >= count) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + count);
         }
         return getNode(index).getData();
     }
+    /**
+     * Finds the index of a currency object
+     * @param c - currency object to find
+     * @return index of currency object
+     */
     public int findCurrency(Currency c) {
         LinkNode current = head;
         for (int i = 0; i < count; i++) {
@@ -198,15 +215,16 @@ public class SinglyLinkedList {
         return cur;
     }
 
-    public void printList() {
+    public String printList() {
         LinkNode cur = head;
-        while (cur != null) {
-            System.out.print(" ");
-            cur.getData().print();
+        String list = "";
+        while (cur.getNext() != null) {
+            list += cur.getData().print() + ", ";
             cur = cur.getNext();
         }
-        System.out.println("");
-        System.out.println("");
+        list += "and " + cur.getData().print();
+        return list;
+        
     }
 }
     

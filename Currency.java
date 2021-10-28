@@ -152,8 +152,8 @@ public abstract class Currency {
     /**
      * Prints the current note and coin values of currency
      */
-    public void print() {
-        System.out.print(getNote() + "." + getCoin());
+    public String print() {
+        return (getNote() + "." + getCoin());
     }
 
 

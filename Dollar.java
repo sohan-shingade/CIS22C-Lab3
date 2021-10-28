@@ -32,9 +32,8 @@ public class Dollar extends Currency{
     }
    
     @Override
-    public void print(){
-        super.print();
-        System.out.println(" " + name);
+    public String print(){
+        return super.print()+ " " + name;
     }
 
 }
